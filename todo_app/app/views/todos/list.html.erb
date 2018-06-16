@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-6">
+      <% @todos.each do |todos| %>
+        <% if todos.completed == false %>
+          <div class="well">
+            <p>Creado hace: <%= time_ago_in_words todos.created_at %></p>
+            <p><%= todos.description %></p>
+            <% if todos.completed == true %>
+              <p>Estado: <strong class="green">Completado</strong></p>
+              <% else %>
+              <p>Estado: <strong class="red">No completado</strong></p>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col-md-6 col-sm-6">
+      <% @todos.each do |todos| %>
+        <% if todos.completed == true %>
+          <div class="well">
+            <p>Creado hace: <%= time_ago_in_words todos.created_at %></p>
+            <p><%= todos.description %></p>
+            <% if todos.completed == true %>
+              <p>Estado: <strong class="green">Completado</strong></p>
+              <% else %>
+              <p>Estado: <strong class="red">No completado</strong></p>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container">
+  <%= link_to "Crear nuevo ToDo", todos_new_path, class:'btn btn-default btn-index' %>
+  <% @todos.each do |todos| %>
+    <div class="well">
+      <p><%= todos.description %></p>
+      <% if todos.completed == true %>
+        <p>Estado: <strong class="green">Completado</strong></p>
+        <% else %>
+        <p>Estado: <strong class="red">No completado</strong></p>
+      <% end %>
+      <% if todos.completed == false %>
+        <%= link_to "Complete", complete_path(todos), class:'btn btn-success' %>
+      <% end %>
+      <%= link_to "Show", todos, class:'btn btn-primary' %>
+      <%= link_to "Edit", edit_path(todos), class:'btn btn-warning' %>
+      <%= link_to "Borrar", todos, method: :delete, class:'btn btn-danger' %>
+    </div>
+  <% end %>
+</div>

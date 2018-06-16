@@ -1,0 +1,10 @@
+<div class="container">
+  <h3>Descripción</h3>
+  <p><%= @todo.description %></p>
+  <% if @todo.completed == true %>
+    <p>Estado: <strong class="green">Completado</strong></p>
+    <% else %>
+    <p>Estado: <strong class="red">No completado</strong></p>
+  <% end %>
+  <%= link_to  "Volver", todos_path, class:'btn btn-default' %>
+</div>
